@@ -5,5 +5,5 @@ typeset -U sudo_path
 sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
 
-userpath=(./ghc/ghc-7.10.1.app/Contents/bin(N-/))
+userpath=(~/.cabal/bin(N-/) ~/ghc/ghc-7.8.4.app/Contents/bin(N-/))
 path=(~/bin(N-/) /usr/local/bin(N-/) ${userpath} ${path})

@@ -32,7 +32,10 @@ NeoBundle 'Shougo/Unite.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
+
 NeoBundle 'vim-scripts/TwitVim'
+
+NeoBundle 'dag/vim2hs'
 
 call neobundle#end()
 
@@ -41,7 +44,7 @@ call neobundle#end()
 "------------------------------
 " カラースキームの設定
 "------------------------------
-colorscheme hybrid-light
+colorscheme hybrid
 
 
 "------------------------------
@@ -109,6 +112,7 @@ filetype plugin indent on
 augroup myvimrc
 autocmd! FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
 
@@ -177,6 +181,17 @@ set statusline=%f%m%r%h%w\ [%{&ff}]\[%Y]\[%L]\%{fugitive#statusline()}
 let twitvim_browser_cmd = 'open'
 let twitvim_force_ssl = 1
 let twitvim_count = 20
+
+
+"------------------------------
+" BackGround Setting
+"------------------------------
+if !has('gui_running')
+    augroup seiya
+        autocmd!
+        autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+    augroup END
+endif
 
 
 "------------------------------
